@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvuhk3agap104"]
+
+[ext_resource type="PackedScene" uid="uid://6vcklgvm70yd" path="res://Map/Buildings/building.tscn" id="1_1t2bl"]
+[ext_resource type="Script" path="res://Map/Buildings/Unique/WatchTower/WatchTower.cs" id="2_ypujb"]
+[ext_resource type="Resource" uid="uid://dq38pnxqdda6c" path="res://Map/Buildings/Unique/WatchTower/watch_tower_data.tres" id="3_4byhh"]
+
+[node name="Building" instance=ExtResource("1_1t2bl")]
+script = ExtResource("2_ypujb")
+AdjacentTileOffensiveBuff = 2
+Data = ExtResource("3_4byhh")

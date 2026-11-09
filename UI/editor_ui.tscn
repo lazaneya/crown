@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://co4awnhc4qf8n"]
+
+[ext_resource type="Script" path="res://UI/EditorUI.cs" id="1_nubwr"]
+
+[node name="EditorTools" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_nubwr")
+
+[node name="GridFunctions" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -93.0
+offset_right = 168.0
+grow_vertical = 0
+
+[node name="GridGeneration" type="HBoxContainer" parent="GridFunctions"]
+layout_mode = 2
+
+[node name="NewGridButton" type="Button" parent="GridFunctions/GridGeneration"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+text = "New Grid
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridFunctions/GridGeneration"]
+layout_mode = 2
+
+[node name="GridSizeLabel" type="Label" parent="GridFunctions/GridGeneration/VBoxContainer"]
+layout_mode = 2
+text = "GridSize
+"
+
+[node name="GridSizeInput" type="LineEdit" parent="GridFunctions/GridGeneration/VBoxContainer"]
+layout_mode = 2
+text = "9"
+
+[node name="GridSaving" type="HBoxContainer" parent="GridFunctions"]
+layout_mode = 2
+
+[node name="SaveGridButton" type="Button" parent="GridFunctions/GridSaving"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+text = "Save Grid"
+
+[node name="LoadGridButton" type="Button" parent="GridFunctions/GridSaving"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+text = "Load Grid"
+
+[connection signal="pressed" from="GridFunctions/GridGeneration/NewGridButton" to="." method="NewGridButtonPressed"]
+[connection signal="text_changed" from="GridFunctions/GridGeneration/VBoxContainer/GridSizeInput" to="." method="OnGridSizeInputChanged"]
+[connection signal="pressed" from="GridFunctions/GridSaving/SaveGridButton" to="." method="SaveGridButtonPressed"]
+[connection signal="pressed" from="GridFunctions/GridSaving/LoadGridButton" to="." method="LoadGridButtonPressed"]

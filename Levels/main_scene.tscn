@@ -1,0 +1,84 @@
+[gd_scene load_steps=19 format=3 uid="uid://drmjg25a4knj5"]
+
+[ext_resource type="PackedScene" uid="uid://c7wpku1xe0qcr" path="res://Players/player.tscn" id="1_ciuxx"]
+[ext_resource type="Script" path="res://Scripts/GameManager.cs" id="1_vbaql"]
+[ext_resource type="PackedScene" uid="uid://bvskj0jkowksj" path="res://UI/BuildingCards/Unique/capital_building_card.tscn" id="2_nr2eq"]
+[ext_resource type="PackedScene" uid="uid://jk443qkafhfx" path="res://Map/HexGrid.tscn" id="2_y5xwq"]
+[ext_resource type="PackedScene" uid="uid://ckbnwyddkl784" path="res://UI/BuildingCards/Unique/embassy_building_card.tscn" id="3_0y8qy"]
+[ext_resource type="PackedScene" uid="uid://clw7t4xai033k" path="res://UI/main_ui.tscn" id="3_r66od"]
+[ext_resource type="PackedScene" uid="uid://d1g0s5jdcjaoj" path="res://UI/BuildingCards/Unique/fortress_building_card.tscn" id="4_t43y5"]
+[ext_resource type="PackedScene" uid="uid://cwwt41gj4na3c" path="res://Players/player_controller.tscn" id="5_0ocim"]
+[ext_resource type="PackedScene" uid="uid://dcqcu0smj2arr" path="res://UI/BuildingCards/Unique/marketplace_building_card.tscn" id="5_5wue1"]
+[ext_resource type="PackedScene" uid="uid://bynmfqm4b7art" path="res://UI/BuildingCards/Unique/trade_center_building_card.tscn" id="6_38bn5"]
+[ext_resource type="Script" path="res://Scripts/RelayServer.cs" id="6_ybtto"]
+[ext_resource type="PackedScene" uid="uid://c8le0r6hrblpa" path="res://UI/BuildingCards/Unique/training_camp_building_card.tscn" id="7_hkp78"]
+[ext_resource type="PackedScene" uid="uid://bqlyoygvcc8hj" path="res://UI/BuildingCards/Unique/watch_tower_building_card.tscn" id="8_y6rla"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fcthd"]
+sky_top_color = Color(0.3976, 0.668347, 0.71, 1)
+sky_horizon_color = Color(1, 0.693333, 0.54, 1)
+ground_horizon_color = Color(1, 0.694118, 0.541176, 1)
+ground_curve = 0.00341508
+
+[sub_resource type="Sky" id="Sky_5nbys"]
+sky_material = SubResource("ProceduralSkyMaterial_fcthd")
+
+[sub_resource type="Environment" id="Environment_ifte0"]
+background_mode = 2
+sky = SubResource("Sky_5nbys")
+ambient_light_sky_contribution = 0.5
+tonemap_mode = 3
+tonemap_white = 5.26
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.01
+volumetric_fog_sky_affect = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_w1ded"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ojxot"]
+albedo_color = Color(0.168, 0.42, 0.4074, 1)
+
+[node name="MainScene" type="Node3D" node_paths=PackedStringArray("_ui")]
+script = ExtResource("1_vbaql")
+_ui = NodePath("MainUI")
+_minPointsForCrown = 3
+DefaultDeck = {
+ExtResource("2_nr2eq"): 5,
+ExtResource("3_0y8qy"): 5,
+ExtResource("4_t43y5"): 5,
+ExtResource("5_5wue1"): 5,
+ExtResource("6_38bn5"): 5,
+ExtResource("7_hkp78"): 5,
+ExtResource("8_y6rla"): 5
+}
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.180705, 0.73297, -0.65582, -0.194706, 0.68026, 0.706636, 0.964072, 1.94879e-08, 0.26564, -23.6461, 10.7563, 0)
+light_color = Color(1, 0.952, 0.76, 1)
+light_energy = 2.051
+
+[node name="Player" parent="." instance=ExtResource("1_ciuxx")]
+
+[node name="HexGrid" parent="." instance=ExtResource("2_y5xwq")]
+transform = Transform3D(0.999999, -0.00105773, 0.00114669, 0.00105569, 0.999998, 0.00176639, -0.00114857, -0.00176516, 0.999998, -14.1, 0, -8.14064)
+
+[node name="MainUI" parent="." node_paths=PackedStringArray("playerController", "hexGrid") instance=ExtResource("3_r66od")]
+playerController = NodePath("../PlayerController")
+hexGrid = NodePath("../HexGrid")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ifte0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(28.5388, 0, 0, 0, 0.647635, 0, 0, 0, 25.8673, 0, -0.511223, 0)
+mesh = SubResource("BoxMesh_w1ded")
+surface_material_override/0 = SubResource("StandardMaterial3D_ojxot")
+
+[node name="PlayerController" parent="." node_paths=PackedStringArray("hexGrid", "UI") instance=ExtResource("5_0ocim")]
+transform = Transform3D(1, 0, 0, 0, 0.199368, 0.979925, 0, -0.979925, 0.199368, 0, 13.619, 4.225)
+hexGrid = NodePath("../HexGrid")
+UI = NodePath("../MainUI")
+CameraSpeed = 10.0
+
+[node name="RelayServerManager" type="Node" parent="."]
+script = ExtResource("6_ybtto")

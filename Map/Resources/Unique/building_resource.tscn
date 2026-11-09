@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://dk4qcqls3f487"]
+
+[ext_resource type="Material" uid="uid://bbcomidkvjkk6" path="res://Source/Castles/Materials/resource_mat.tres" id="1_1tiep"]
+[ext_resource type="ArrayMesh" uid="uid://dvsqjj73ahdrl" path="res://Source/Castles/Meshes/castles_SquareResource.res" id="2_8p6n6"]
+[ext_resource type="Script" path="res://Map/Resources/ResourceTile.cs" id="3_26u12"]
+
+[node name="Resource2" type="MeshInstance3D"]
+transform = Transform3D(-6.55671e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.55671e-08, 0, 0, 0)
+material_override = ExtResource("1_1tiep")
+mesh = ExtResource("2_8p6n6")
+script = ExtResource("3_26u12")
+ResourceName = "building"

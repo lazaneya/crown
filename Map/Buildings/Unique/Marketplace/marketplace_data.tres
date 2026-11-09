@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BuildingData" load_steps=2 format=3 uid="uid://cpxaworfhbaiw"]
+
+[ext_resource type="Script" path="res://Map/Buildings/BuildingData.cs" id="1_ej4it"]
+
+[resource]
+script = ExtResource("1_ej4it")
+ID = 3
+Price = 3
+CardText = "Marketplace"
+BuildsOnEnemy = false
+Description = "Gives 1 Gold Discount to Building Trades."

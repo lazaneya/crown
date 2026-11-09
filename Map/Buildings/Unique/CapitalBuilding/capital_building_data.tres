@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BuildingData" load_steps=2 format=3 uid="uid://7u6b0066dp3i"]
+
+[ext_resource type="Script" path="res://Map/Buildings/BuildingData.cs" id="1_byo50"]
+
+[resource]
+script = ExtResource("1_byo50")
+ID = 0
+Price = 3
+CardText = "Capital Building"
+BuildsOnEnemy = false
+Description = "Gives 2 Gold Discount to Reputation Trades."

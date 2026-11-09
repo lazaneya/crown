@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BuildingData" load_steps=2 format=3 uid="uid://d3jj46ah8ku8r"]
+
+[ext_resource type="Script" path="res://Map/Buildings/BuildingData.cs" id="1_8ury4"]
+
+[resource]
+script = ExtResource("1_8ury4")
+ID = 1
+Price = 5
+CardText = "Embassy"
+BuildsOnEnemy = true
+Description = "Placed on an enemy tile, generates 1 Reputation per turn if surround by 3 enemy tiles. Adjacent enemy tiles generate 1 gold per turn."

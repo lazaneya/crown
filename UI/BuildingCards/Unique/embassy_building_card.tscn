@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckbnwyddkl784"]
+
+[ext_resource type="PackedScene" uid="uid://othq1mf1of68" path="res://UI/BuildingCards/building_button.tscn" id="1_a3cxl"]
+[ext_resource type="PackedScene" uid="uid://dkg38t1w6as5g" path="res://Map/Buildings/Unique/Embassy/embassy.tscn" id="2_yu33d"]
+[ext_resource type="Resource" uid="uid://d3jj46ah8ku8r" path="res://Map/Buildings/Unique/Embassy/embassy_data.tres" id="3_yi7fr"]
+
+[node name="BuildingCard" instance=ExtResource("1_a3cxl")]
+BuildingScene = ExtResource("2_yu33d")
+Data = ExtResource("3_yi7fr")
+
+[node name="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
+text = "Embassy"
+
+[node name="GoldIcon" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" index="1"]
+Price = 5
+
+[node name="DescriptionLabel" parent="PanelContainer/MarginContainer/VBoxContainer" index="1"]
+text = "Placed on an enemy tile, generates 1 Reputation per turn if surround by 3 enemy tiles. Adjacent enemy tiles generate 1 gold per turn."

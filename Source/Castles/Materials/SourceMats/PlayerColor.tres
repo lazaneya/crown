@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bkv31ice3ou3p"]
+
+[resource]
+resource_name = "PlayerColor"
+cull_mode = 2
+albedo_color = Color(0.777634, 0.556806, 0.906359, 1)
+roughness = 0.590674

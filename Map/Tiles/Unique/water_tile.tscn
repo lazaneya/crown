@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxc57u1u3ol88"]
+
+[ext_resource type="PackedScene" uid="uid://cjjk28vvneswd" path="res://Map/Tiles/Tile.tscn" id="1_netdn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rm6tm"]
+albedo_color = Color(0, 0.507985, 0.871791, 1)
+
+[node name="Tile" instance=ExtResource("1_netdn")]
+Type = "water"
+OpenToLeyLine = false
+
+[node name="TileMesh" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_rm6tm")

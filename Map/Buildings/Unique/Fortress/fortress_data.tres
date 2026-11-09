@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BuildingData" load_steps=2 format=3 uid="uid://bfgl850swgtox"]
+
+[ext_resource type="Script" path="res://Map/Buildings/BuildingData.cs" id="1_8khji"]
+
+[resource]
+script = ExtResource("1_8khji")
+ID = 2
+Price = 4
+CardText = "Fortress"
+BuildsOnEnemy = false
+Description = "Gives +2 on defensive rollls to adjacent friendly tiles."

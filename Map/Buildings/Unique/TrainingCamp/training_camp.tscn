@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddkjyt8bggxeh"]
+
+[ext_resource type="PackedScene" uid="uid://6vcklgvm70yd" path="res://Map/Buildings/building.tscn" id="1_java1"]
+[ext_resource type="ArrayMesh" uid="uid://dhvcfb3ymkm63" path="res://Source/Castles/Meshes/castles_TrainingCamp.res" id="2_urgs3"]
+[ext_resource type="Script" path="res://Map/Buildings/Unique/TrainingCamp/TrainingCamp.cs" id="3_q5til"]
+[ext_resource type="Resource" uid="uid://cfk7xo1ul7n1q" path="res://Map/Buildings/Unique/TrainingCamp/training_camp_data.tres" id="4_71q04"]
+
+[node name="Building" instance=ExtResource("1_java1")]
+mesh = ExtResource("2_urgs3")
+script = ExtResource("3_q5til")
+DiscountType = "army"
+Weight = 1
+Data = ExtResource("4_71q04")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=3 uid="uid://c354xdna7g1vj"]
+
+[ext_resource type="PackedScene" uid="uid://6vcklgvm70yd" path="res://Map/Buildings/building.tscn" id="1_wgyy4"]
+[ext_resource type="ArrayMesh" uid="uid://bhjkwi4x00a8l" path="res://Source/Castles/Meshes/castles_Marketplace.res" id="2_3r2pa"]
+[ext_resource type="Script" path="res://Map/Buildings/Unique/Marketplace/Marketplace.cs" id="3_lknkj"]
+[ext_resource type="Resource" uid="uid://cpxaworfhbaiw" path="res://Map/Buildings/Unique/Marketplace/marketplace_data.tres" id="4_mdhti"]
+
+[node name="Building" instance=ExtResource("1_wgyy4")]
+mesh = ExtResource("2_3r2pa")
+script = ExtResource("3_lknkj")
+DiscountType = "building"
+Weight = 1
+Data = ExtResource("4_mdhti")

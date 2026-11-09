@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BuildingData" load_steps=2 format=3 uid="uid://cfk7xo1ul7n1q"]
+
+[ext_resource type="Script" path="res://Map/Buildings/BuildingData.cs" id="1_13ehm"]
+
+[resource]
+script = ExtResource("1_13ehm")
+ID = 5
+Price = 3
+CardText = "Training Camp"
+BuildsOnEnemy = false
+Description = "Gives 1 Gold Discount to Army Trades."

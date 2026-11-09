@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cwmb6e1i53nwh"]
+
+[node name="ResourceCounters" type="GridContainer"]
+offset_right = 118.0
+offset_bottom = 104.0
+theme_override_constants/h_separation = 6
+columns = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Reputation
+"
+
+[node name="Label7" type="Label" parent="."]
+layout_mode = 2
+text = "0
+"
+metadata/ResourceCounter = "reputation"
+
+[node name="Label8" type="Label" parent="."]
+layout_mode = 2
+text = "Gold
+"
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 2
+text = "0
+"
+metadata/ResourceCounter = "gold"
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 2
+text = "Building
+"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+text = "0
+"
+metadata/ResourceCounter = "building"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 2
+text = "Army"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 2
+text = "0"
+metadata/ResourceCounter = "army"

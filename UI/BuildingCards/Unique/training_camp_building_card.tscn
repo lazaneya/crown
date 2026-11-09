@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8le0r6hrblpa"]
+
+[ext_resource type="PackedScene" uid="uid://othq1mf1of68" path="res://UI/BuildingCards/building_button.tscn" id="1_gfdp2"]
+[ext_resource type="PackedScene" uid="uid://ddkjyt8bggxeh" path="res://Map/Buildings/Unique/TrainingCamp/training_camp.tscn" id="2_nl78p"]
+[ext_resource type="Resource" uid="uid://cfk7xo1ul7n1q" path="res://Map/Buildings/Unique/TrainingCamp/training_camp_data.tres" id="3_6ualo"]
+
+[node name="BuildingCard" instance=ExtResource("1_gfdp2")]
+BuildingScene = ExtResource("2_nl78p")
+Data = ExtResource("3_6ualo")
+
+[node name="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
+text = "Training Camp"
+
+[node name="DescriptionLabel" parent="PanelContainer/MarginContainer/VBoxContainer" index="1"]
+text = "Gives 1 Gold Discount to Army Trades."

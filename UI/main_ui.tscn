@@ -1,0 +1,305 @@
+[gd_scene load_steps=12 format=3 uid="uid://clw7t4xai033k"]
+
+[ext_resource type="Script" path="res://UI/MainUI.cs" id="1_x52y5"]
+[ext_resource type="PackedScene" uid="uid://co4awnhc4qf8n" path="res://UI/editor_ui.tscn" id="3_1eily"]
+[ext_resource type="PackedScene" uid="uid://bshf80xxm53ot" path="res://UI/player_slate.tscn" id="4_4t0s5"]
+[ext_resource type="PackedScene" uid="uid://3y4rijyc4jou" path="res://UI/Windows/WarWindow/war_window.tscn" id="5_7iifa"]
+[ext_resource type="PackedScene" uid="uid://nag8mqw4p1p3" path="res://UI/trade_button.tscn" id="5_67uim"]
+[ext_resource type="PackedScene" uid="uid://d2x37lqrn0wtq" path="res://UI/Windows/WinWindow/win_window.tscn" id="6_21brs"]
+[ext_resource type="PackedScene" uid="uid://c8w6n5diyavfj" path="res://UI/Windows/CrownWindow/crown_window.tscn" id="7_75tjw"]
+[ext_resource type="PackedScene" uid="uid://cimqulc8t1qdv" path="res://UI/tile_info_popup.tscn" id="8_odk7f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e77sg"]
+bg_color = Color(0.7, 0.4, 0.4, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dlmoh"]
+bg_color = Color(0.364706, 0.556863, 0.305882, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crcwa"]
+bg_color = Color(0.37, 0.530333, 0.74, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="MainUI" type="CanvasLayer" node_paths=PackedStringArray("editorUI", "GameUI", "TradeWindow", "WinWindow", "CrownWindow", "MainMenuContainer", "LobbyIdLineEdit", "PlayerNameLineEdit", "TurnTracker", "PlayerName", "SkipTurnButton", "StartGameButton", "DrawCardButton", "TileInfoPopup", "BuildingCardContainer", "PlayersWrapper", "WarWindowUI")]
+script = ExtResource("1_x52y5")
+editorUI = NodePath("EditorUI")
+GameUI = NodePath("GameUI")
+TradeWindow = NodePath("GameUI/TradeWindow")
+WinWindow = NodePath("GameUI/WinWindow")
+CrownWindow = NodePath("GameUI/CrownWindow")
+MainMenuContainer = NodePath("MainMenuUI")
+LobbyIdLineEdit = NodePath("MainMenuUI/HBoxContainer2/LobbyIDLineEdit")
+PlayerNameLineEdit = NodePath("MainMenuUI/HBoxContainer3/NameLineEdit")
+TurnTracker = NodePath("GameUI/GameManagerInfo/TurnTracker")
+PlayerName = NodePath("GameUI/GameManagerInfo/PlayerName")
+SkipTurnButton = NodePath("GameUI/SkipTurnButton")
+StartGameButton = NodePath("GameUI/StartGameButton")
+DrawCardButton = NodePath("GameUI/DrawCardButton")
+TileInfoPopup = NodePath("GameUI/TileInfoPopup")
+BuildingCardContainer = NodePath("GameUI/BuildingCardContainer")
+PlayerSlatePackedScene = ExtResource("4_4t0s5")
+PlayersWrapper = NodePath("GameUI/PlayersWrapper")
+WarWindowUI = NodePath("GameUI/WarWindow")
+
+[node name="EditorUI" parent="." instance=ExtResource("3_1eily")]
+visible = false
+z_index = 99
+
+[node name="GameUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="GameManagerInfo" type="VBoxContainer" parent="GameUI"]
+layout_mode = 0
+offset_right = 102.0
+offset_bottom = 185.0
+
+[node name="PlayerName" type="Label" parent="GameUI/GameManagerInfo"]
+layout_mode = 2
+
+[node name="TurnTracker" type="VBoxContainer" parent="GameUI/GameManagerInfo"]
+layout_mode = 2
+
+[node name="TurnIndicator" type="Label" parent="GameUI/GameManagerInfo/TurnTracker"]
+layout_mode = 2
+text = "YOUR TURN"
+horizontal_alignment = 1
+
+[node name="TurnPhaseIndicator" type="Label" parent="GameUI/GameManagerInfo/TurnTracker"]
+layout_mode = 2
+text = "{Phase}"
+
+[node name="SkipTurnButton" type="Button" parent="GameUI"]
+layout_mode = 2
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -86.0
+offset_top = -111.0
+offset_right = -5.0
+offset_bottom = -80.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+text = "Skip Turn"
+
+[node name="BuildingCardContainer" type="HBoxContainer" parent="GameUI"]
+layout_direction = 3
+layout_mode = 2
+offset_left = 131.0
+offset_top = 26.0
+offset_right = 689.0
+offset_bottom = 632.0
+theme_override_constants/separation = 20
+
+[node name="DrawCardButton" type="Button" parent="GameUI"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -110.0
+offset_top = -71.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_default_cursor_shape = 2
+text = "Draw Card
+(Cost 3 Build)"
+
+[node name="PlayersWrapper" type="VBoxContainer" parent="GameUI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -238.0
+offset_bottom = 304.0
+grow_horizontal = 0
+mouse_filter = 2
+
+[node name="WarWindow" parent="GameUI" instance=ExtResource("5_7iifa")]
+visible = false
+layout_mode = 1
+
+[node name="TradeWindow" type="PanelContainer" parent="GameUI"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -74.0
+offset_right = 123.0
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="GameUI/TradeWindow"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameUI/TradeWindow/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="GameUI/TradeWindow/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Trade"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameUI/TradeWindow/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TradeButton" parent="GameUI/TradeWindow/MarginContainer/VBoxContainer/HBoxContainer" groups=["TradeButton"] instance=ExtResource("5_67uim")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e77sg")
+DefaultPrice = 3
+
+[node name="TradeButton2" parent="GameUI/TradeWindow/MarginContainer/VBoxContainer/HBoxContainer" groups=["TradeButton"] instance=ExtResource("5_67uim")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dlmoh")
+DefaultPrice = 3
+Resource = "building"
+BackgroundColor = Color(0.364706, 0.556863, 0.305882, 1)
+
+[node name="TradeButton3" parent="GameUI/TradeWindow/MarginContainer/VBoxContainer/HBoxContainer" groups=["TradeButton"] instance=ExtResource("5_67uim")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_crcwa")
+DefaultPrice = 7
+Resource = "reputation"
+BackgroundColor = Color(0.37, 0.530333, 0.74, 1)
+
+[node name="WinWindow" parent="GameUI" instance=ExtResource("6_21brs")]
+visible = false
+layout_mode = 1
+offset_left = -255.0
+offset_top = -85.0
+offset_right = 255.0
+offset_bottom = 85.0
+
+[node name="StartGameButton" type="Button" parent="GameUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Game"
+
+[node name="CrownWindow" parent="GameUI" instance=ExtResource("7_75tjw")]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.5
+offset_top = -56.5
+offset_right = 61.5
+offset_bottom = 56.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TileInfoPopup" parent="GameUI" instance=ExtResource("8_odk7f")]
+visible = false
+layout_mode = 0
+offset_right = 124.0
+offset_bottom = 71.0
+
+[node name="MainMenuUI" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -96.5
+offset_top = -50.5
+offset_right = 96.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 4
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MainMenuUI"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Label" type="Label" parent="MainMenuUI/HBoxContainer3"]
+layout_mode = 2
+text = "Name"
+
+[node name="NameLineEdit" type="LineEdit" parent="MainMenuUI/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MainMenuUI"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Label" type="Label" parent="MainMenuUI/HBoxContainer2"]
+layout_mode = 2
+text = "Lobby ID"
+
+[node name="LobbyIDLineEdit" type="LineEdit" parent="MainMenuUI/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "1"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenuUI"]
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 2
+
+[node name="HostServerButton" type="Button" parent="MainMenuUI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+mouse_default_cursor_shape = 2
+text = "Host Server"
+
+[node name="JoinServerButton" type="Button" parent="MainMenuUI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+mouse_default_cursor_shape = 2
+text = "Join Server"
+
+[node name="EditorMode" type="Button" parent="MainMenuUI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+text = "Open Editor"
+
+[connection signal="pressed" from="GameUI/SkipTurnButton" to="." method="SkipTurnButtonPressed"]
+[connection signal="pressed" from="GameUI/DrawCardButton" to="." method="DrawCardButtonPressed"]
+[connection signal="pressed" from="GameUI/StartGameButton" to="." method="StartGameButtonPressed"]
+[connection signal="pressed" from="MainMenuUI/HBoxContainer/HostServerButton" to="." method="HostServerButtonPressed"]
+[connection signal="pressed" from="MainMenuUI/HBoxContainer/JoinServerButton" to="." method="JoinServerButtonPressed"]
+[connection signal="pressed" from="MainMenuUI/HBoxContainer/EditorMode" to="." method="EditorModeButtonPressed"]

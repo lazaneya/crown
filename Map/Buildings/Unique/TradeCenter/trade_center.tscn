@@ -1,0 +1,11 @@
+[gd_scene load_steps=5 format=3 uid="uid://cscekgcafj7co"]
+
+[ext_resource type="PackedScene" uid="uid://6vcklgvm70yd" path="res://Map/Buildings/building.tscn" id="1_1vhtd"]
+[ext_resource type="ArrayMesh" uid="uid://e8rett25tx8q" path="res://Source/Castles/Meshes/castles_TradeCenter.res" id="2_qoc2l"]
+[ext_resource type="Script" path="res://Map/Buildings/Unique/TradeCenter/TradeCenter.cs" id="3_nw15q"]
+[ext_resource type="Resource" uid="uid://bk3hvk4kxcmn6" path="res://Map/Buildings/Unique/TradeCenter/trade_center_data.tres" id="4_ic6hh"]
+
+[node name="Building" instance=ExtResource("1_1vhtd")]
+mesh = ExtResource("2_qoc2l")
+script = ExtResource("3_nw15q")
+Data = ExtResource("4_ic6hh")

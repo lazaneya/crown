@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcqcu0smj2arr"]
+
+[ext_resource type="PackedScene" uid="uid://othq1mf1of68" path="res://UI/BuildingCards/building_button.tscn" id="1_dr6xa"]
+[ext_resource type="PackedScene" uid="uid://c354xdna7g1vj" path="res://Map/Buildings/Unique/Marketplace/marketplace.tscn" id="2_40ry1"]
+[ext_resource type="Resource" uid="uid://cpxaworfhbaiw" path="res://Map/Buildings/Unique/Marketplace/marketplace_data.tres" id="3_em57e"]
+
+[node name="BuildingCard" instance=ExtResource("1_dr6xa")]
+BuildingScene = ExtResource("2_40ry1")
+Data = ExtResource("3_em57e")
+
+[node name="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
+text = "Marketplace"
+
+[node name="DescriptionLabel" parent="PanelContainer/MarginContainer/VBoxContainer" index="1"]
+text = "Gives 1 Gold Discount to Building Trades."

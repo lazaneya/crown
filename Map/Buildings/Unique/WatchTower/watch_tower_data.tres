@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BuildingData" load_steps=2 format=3 uid="uid://dq38pnxqdda6c"]
+
+[ext_resource type="Script" path="res://Map/Buildings/BuildingData.cs" id="1_c1ntx"]
+
+[resource]
+script = ExtResource("1_c1ntx")
+ID = 6
+Price = 3
+CardText = "Watch Tower"
+BuildsOnEnemy = false
+Description = "Gives +2 on offensive rolls to adjacent friendly tiles."

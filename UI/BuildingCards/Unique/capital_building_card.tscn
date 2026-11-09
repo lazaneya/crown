@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bvskj0jkowksj"]
+
+[ext_resource type="PackedScene" uid="uid://othq1mf1of68" path="res://UI/BuildingCards/building_button.tscn" id="1_xic5j"]
+[ext_resource type="PackedScene" uid="uid://p5un2txf0dug" path="res://Map/Buildings/Unique/CapitalBuilding/capital_building.tscn" id="2_ghp5m"]
+[ext_resource type="Resource" uid="uid://7u6b0066dp3i" path="res://Map/Buildings/Unique/CapitalBuilding/capital_building_data.tres" id="3_07who"]
+
+[node name="BuildingCard" instance=ExtResource("1_xic5j")]
+mouse_filter = 1
+BuildingScene = ExtResource("2_ghp5m")
+Data = ExtResource("3_07who")
+
+[node name="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" index="0"]
+text = "Capital Building"
+
+[node name="DescriptionLabel" parent="PanelContainer/MarginContainer/VBoxContainer" index="1"]
+text = "Gives 2 Gold Discount to Reputation Trades."

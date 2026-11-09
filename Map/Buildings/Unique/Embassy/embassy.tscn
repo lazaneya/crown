@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=3 uid="uid://dkg38t1w6as5g"]
+
+[ext_resource type="PackedScene" uid="uid://6vcklgvm70yd" path="res://Map/Buildings/building.tscn" id="1_nubo2"]
+[ext_resource type="ArrayMesh" uid="uid://b2hu8gq6ei1af" path="res://Source/Castles/Meshes/castles_Embassy.res" id="2_1vbc5"]
+[ext_resource type="Script" path="res://Map/Buildings/Unique/Embassy/Embassy.cs" id="3_mgt2a"]
+[ext_resource type="Resource" uid="uid://d3jj46ah8ku8r" path="res://Map/Buildings/Unique/Embassy/embassy_data.tres" id="4_kfso5"]
+
+[node name="Building" instance=ExtResource("1_nubo2")]
+layers = 5
+mesh = ExtResource("2_1vbc5")
+script = ExtResource("3_mgt2a")
+MinTilesForReputation = 3
+Data = ExtResource("4_kfso5")

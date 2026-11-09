@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BuildingData" load_steps=2 format=3 uid="uid://bk3hvk4kxcmn6"]
+
+[ext_resource type="Script" path="res://Map/Buildings/BuildingData.cs" id="1_mksow"]
+
+[resource]
+script = ExtResource("1_mksow")
+ID = 4
+Price = 2
+CardText = "Trade Center"
+BuildsOnEnemy = false
+Description = "Generates 1 Gold per turn."

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://6vcklgvm70yd"]
+
+[ext_resource type="ArrayMesh" uid="uid://1mhnblbgab6v" path="res://Source/Castles/Meshes/castles_WatchTower.res" id="1_evcy6"]
+[ext_resource type="Script" path="res://Map/Buildings/Building.cs" id="2_itu21"]
+
+[node name="Building" type="MeshInstance3D"]
+mesh = ExtResource("1_evcy6")
+script = ExtResource("2_itu21")

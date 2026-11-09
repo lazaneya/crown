@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://jk443qkafhfx"]
+
+[ext_resource type="Script" path="res://Map/HexGrid.cs" id="1_vuhf4"]
+
+[node name="HexGrid" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1, 0, -8.14064)
+script = ExtResource("1_vuhf4")
+TilesDirectory = "res://Map/Tiles/Unique/"
+Spacing = 2.35
+Offset = Vector2(4, 4)

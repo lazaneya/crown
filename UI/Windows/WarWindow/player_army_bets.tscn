@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://dioj6fgar70bo"]
+
+[ext_resource type="Script" path="res://UI/Windows/WarWindow/PlayerArmyBets.cs" id="1_2b14q"]
+
+[node name="PlayerArmyBets" type="HBoxContainer" node_paths=PackedStringArray("ActiveTroopsLabel", "IncrementTroopsButton", "TotalTroopsLabel", "ConfirmationButton")]
+alignment = 1
+script = ExtResource("1_2b14q")
+ActiveTroopsLabel = NodePath("VBoxContainer/VBoxContainer/ActiveTroopsLabel")
+IncrementTroopsButton = NodePath("VBoxContainer/VBoxContainer/Button")
+TotalTroopsLabel = NodePath("VBoxContainer/VBoxContainer/MaxTroopsLabel")
+ConfirmationButton = NodePath("VBoxContainer/ConfirmationButton")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ActiveTroopsLabel" type="Label" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "0
+"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "+"
+
+[node name="MaxTroopsLabel" type="Label" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Max Army: {#}"
+
+[node name="ConfirmationButton" type="Button" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "Confirm"

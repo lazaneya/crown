@@ -1,0 +1,4 @@
+interface IBuildingUpkeep
+{
+  void Upkeep();
+}

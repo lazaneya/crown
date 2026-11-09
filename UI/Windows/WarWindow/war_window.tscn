@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://3y4rijyc4jou"]
+
+[ext_resource type="Script" path="res://UI/Windows/WarWindow/WarWindow.cs" id="1_igj3x"]
+[ext_resource type="PackedScene" uid="uid://dioj6fgar70bo" path="res://UI/Windows/WarWindow/player_army_bets.tscn" id="1_nlaq2"]
+
+[node name="WarWindow" type="PanelContainer" node_paths=PackedStringArray("AttackerUI", "DefenderUI")]
+custom_minimum_size = Vector2(400, 300)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_igj3x")
+AttackerUI = NodePath("PanelContainer/PlayerArmy_1")
+DefenderUI = NodePath("PanelContainer/PlayerArmy_2")
+
+[node name="PanelContainer" type="HSplitContainer" parent="."]
+layout_direction = 2
+layout_mode = 2
+split_offset = 200
+dragger_visibility = 2
+
+[node name="PlayerArmy_1" parent="PanelContainer" instance=ExtResource("1_nlaq2")]
+layout_mode = 2
+
+[node name="PlayerArmy_2" parent="PanelContainer" instance=ExtResource("1_nlaq2")]
+layout_mode = 2
